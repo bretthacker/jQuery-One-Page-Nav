@@ -147,7 +147,8 @@
 			if(!$parent.hasClass(self.config.currentClass)) {
 				//Start callback
 				if(self.config.begin) {
-					self.config.begin();
+				    var res = self.config.begin($link);
+		                    if (typeof res!="undefined" && res==false) return false;
 				}
 
 				//Change the highlighted nav item
